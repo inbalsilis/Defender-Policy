@@ -5,11 +5,7 @@
   "mode": "Indexed",
   "description": "This policy automatically deploys diagnostic settings to Apply Diagnostic Settings for Microsoft.Web/sites (app) to a Log Analytics Workspace.",
   "metadata": {
-   "category": "Monitoring",
-   "createdBy": "405f64fb-286b-4b09-9930-dd2ac5b61fd1",
-   "createdOn": "2022-06-13T11:09:05.1336412Z",
-   "updatedBy": null,
-   "updatedOn": null
+   "category": "Monitoring"
   },
   "parameters": {
    "profileName": {
