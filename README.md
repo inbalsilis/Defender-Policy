@@ -1,3 +1,3 @@
 # Defender-Policy
 Sample of custom defender policies
-Include DeployIfNotExists
+Include deployIfNotExists
