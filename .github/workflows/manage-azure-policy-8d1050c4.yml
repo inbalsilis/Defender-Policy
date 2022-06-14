@@ -1,0 +1,42 @@
+name: manage-azure-policy-8d1050c4
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - 'policies/Apply_Diagnostic_Settings_for_Microsoft.Network/networkInterfaces_to_a_Log_Analytics_Workspace_9ba12da7-6233-4bc3-945c-606bf47106f4/**'
+#      - 'policies/Apply_Diagnostic_Settings_for_Microsoft.Storage/storageAccounts_(StorageV2)_to_a_Log_Analytics_Workspace_26208c1e-a7a2-412c-9bce-afcb87688831/**'
+#      - 'policies/Apply_Diagnostic_Settings_for_Microsoft.Compute/virtualMachines_to_a_Log_Analytics_Workspace_9ba12da7-6233-4bc3-945c-606bf47106ec/**'
+#      - 'policies/Apply_Diagnostic_Settings_for_Microsoft.Network/virtualNetworks_to_a_Log_Analytics_Workspace_9ba12da7-6233-4bc3-945c-606bf4710702/**'
+#      - 'policies/Apply_Diagnostic_Settings_for_Microsoft.Storage/storageAccounts/blobServices_(Storage_blob)_to_a_Log_Analytics_Workspace_9ba12da7-6233-4bc3-945c-606bf4710716/**'
+#      - 'policies/Apply_Diagnostic_Settings_for_Microsoft.Storage/storageAccounts/fileServices_(Storage_fileServices)_to_a_Log_Analytics_Workspace_9ba12da7-6233-4bc3-945c-606bf4710724/**'
+#      - .github/workflows/manage-azure-policy-8d1050c4.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_8d1050c4}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          policies/Apply_Diagnostic_Settings_for_Microsoft.Network/networkInterfaces_to_a_Log_Analytics_Workspace_9ba12da7-6233-4bc3-945c-606bf47106f4/**
+          policies/Apply_Diagnostic_Settings_for_Microsoft.Storage/storageAccounts_(StorageV2)_to_a_Log_Analytics_Workspace_26208c1e-a7a2-412c-9bce-afcb87688831/**
+          policies/Apply_Diagnostic_Settings_for_Microsoft.Compute/virtualMachines_to_a_Log_Analytics_Workspace_9ba12da7-6233-4bc3-945c-606bf47106ec/**
+          policies/Apply_Diagnostic_Settings_for_Microsoft.Network/virtualNetworks_to_a_Log_Analytics_Workspace_9ba12da7-6233-4bc3-945c-606bf4710702/**
+          policies/Apply_Diagnostic_Settings_for_Microsoft.Storage/storageAccounts/blobServices_(Storage_blob)_to_a_Log_Analytics_Workspace_9ba12da7-6233-4bc3-945c-606bf4710716/**
+          policies/Apply_Diagnostic_Settings_for_Microsoft.Storage/storageAccounts/fileServices_(Storage_fileServices)_to_a_Log_Analytics_Workspace_9ba12da7-6233-4bc3-945c-606bf4710724/**
