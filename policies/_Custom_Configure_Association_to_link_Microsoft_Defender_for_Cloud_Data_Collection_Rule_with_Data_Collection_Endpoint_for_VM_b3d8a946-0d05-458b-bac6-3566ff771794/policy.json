@@ -172,7 +172,7 @@
           "name": "[variables('dcraName')]",
           "apiVersion": "2021-09-01-preview",
           "properties": {
-           "dataCollectionEndpointId": "/subscriptions/36c4b3fa-c1d3-4d9c-b114-81b3fd8e4371/resourceGroups/DefaultResourceGroup-EUS/providers/Microsoft.Insights/dataCollectionEndpoints/DCEP-Test"
+           "dataCollectionEndpointId": ""
           }
          }
         ]
@@ -183,7 +183,6 @@
    }
   }
  },
- "id": "/subscriptions/36c4b3fa-c1d3-4d9c-b114-81b3fd8e4371/providers/Microsoft.Authorization/policyDefinitions/b3d8a946-0d05-458b-bac6-3566ff771794",
  "type": "Microsoft.Authorization/policyDefinitions",
  "name": "b3d8a946-0d05-458b-bac6-3566ff771794"
 }
