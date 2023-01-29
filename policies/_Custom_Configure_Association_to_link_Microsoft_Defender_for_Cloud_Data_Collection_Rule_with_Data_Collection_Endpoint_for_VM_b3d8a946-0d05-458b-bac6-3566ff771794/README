@@ -1,5 +1,0 @@
-Please create New Policy in Azure Policy and copy the JSON to the Policy Rule.
-Please search for "dataCollectionEndpointId", see it is empty, and add the DataCollection endpoint ID from the JSON view (in the overview screen)
-Please give it the relevent name: [Custom]: Configure Association to link Microsoft Defender for Cloud Data Collection Rule with Data Collection Endpoint for VM
-Please set the relevent scope and save the policy.
-Note: if you have multiple regions, the policy should be created per region with the relevent dataCollectionEndpointId
