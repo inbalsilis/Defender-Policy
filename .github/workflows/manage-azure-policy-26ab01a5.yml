@@ -1,0 +1,32 @@
+name: manage-azure-policy-26ab01a5
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - 'policies/_AMPLS_Custom_Configure_Ass_to_link_Azure_Arc_to_user-defined_Microsoft_Defender_for_Cloud_Data_Collection_Rule_and_EP_e741b577-e0e6-4b01-a582-a85deb4881db/**'
+#      - .github/workflows/manage-azure-policy-26ab01a5.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_26ab01a5}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          policies/_AMPLS_Custom_Configure_Ass_to_link_Azure_Arc_to_user-defined_Microsoft_Defender_for_Cloud_Data_Collection_Rule_and_EP_e741b577-e0e6-4b01-a582-a85deb4881db/**
