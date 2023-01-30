@@ -2,6 +2,8 @@ Please create New Policy in Azure Policy and copy the JSON to the Policy Rule.
 
 Please give it the relevant name. 
 
+Please set Category = Security Center.
+
 Please set the relevant scope and save the policy. 
 
 When assigning the policy, please set parameters: 
