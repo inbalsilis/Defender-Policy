@@ -8,7 +8,7 @@ Please set the relevant scope and save the policy.
 
 When assigning the policy, please set parameters:
 
-1.workspace region - the region of the Dafender for cloud workspace
+1.workspace region - the region of the Defender for cloud workspace
 
 2.Data Collection Endpoint Resource Id - the resource id from the data collection endpoint to be assigned. You can find it in the data collection endpoint JSON
 
